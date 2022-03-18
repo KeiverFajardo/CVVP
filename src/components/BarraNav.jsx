@@ -11,29 +11,28 @@ import { Link, NavLink } from "react-router-dom";
 
 const BarraNav = () => {
   return (
-    <Navbar className="menu-fixed">
-    <Container>
-        <Link exact to='/'>
-            <Navbar.Brand exact to="/" className="text-uppercase active">
-                <li class="nav-item"><a class="nav-link navlink2" href="#home">CVVP.</a></li>
-            </Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="navbar-nav text-uppercase ms-auto container">
-
-                <NavLink exact to='/' activeClassName="active">
-                    <li class="nav-item"><a class="nav-link" href="#">Mouse</a></li>
-                </NavLink>
-
-                <NavLink exact to='/' activeClassName="active">
-                    <li class="nav-item"><a class="nav-link" href="#">Laptop</a></li>
-                </NavLink>
-
-            </Nav>
-        </Navbar.Collapse>
-    </Container>
-</Navbar>
+    <nav className="navbar navbar-expand-lg navbar-light bg-">
+        <div className="container-fluid">
+            <a className="navbar-brand" href="#">CVVP</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li className="nav-item">
+                <a className="nav-link" href="#">Configuracion</a>
+                </li>
+                <li className="nav-item">
+                <a className="nav-link" href="#">Usuarios</a>
+                </li>
+                
+            </ul>
+            </div>
+        </div>
+    </nav>
   )
 }
 

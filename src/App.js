@@ -7,10 +7,9 @@ import BarraNav from './components/BarraNav';
 
 function App() {
   return (
-   
-                                <BarraNav/>
-                                
-                               
+
+          <BarraNav/>
+          
   );
 }
 
