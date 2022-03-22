@@ -24,8 +24,8 @@ function App() {
                 <Route path='/home' element={ <Home/> } />
                 <Route path='/configuracion' element={ <Configuracion/> } />
                 <Route path='/altaSocio' element={ <AltaSocio/> } />
-                <Route path='/administrarUsuario' element={ <AdministrarSocio/> } />
-                <Route path='/administrarSocio' element={ <AdministrarUsuario/> } />
+                <Route path='/administrarSocio' element={ <AdministrarSocio/> } />
+                <Route path='/administrarUsuario' element={ <AdministrarUsuario/> } />
 
             </Routes>
    

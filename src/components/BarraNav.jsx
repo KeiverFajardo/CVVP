@@ -41,7 +41,7 @@ const BarraNav = () => {
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Usuario
+                    Socio
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
                     <li className="nav-item">
