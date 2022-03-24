@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import AdministrarUsuario from './AdministrarUsuario';
 import '../style.css'
 
 const AltaUsuario = () => {
@@ -169,6 +170,8 @@ function handleOnChange(e) {
                                             
                                         </div>
         </form>
+
+        <AdministrarUsuario/>
     </>
     
   )
