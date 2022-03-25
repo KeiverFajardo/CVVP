@@ -34,12 +34,12 @@ const AdministrarSocio = () => {
           <div>AdministrarSocio</div>
           <br />
 
-          <button className='btn btn-outline-info' onChange={ingresar}>Crear Socio</button>
+          
 
           { mostrarAltaSocio
                     ?  
-                        <div>Hola
-                        </div>
+                    <button className='btn btn-outline-info' onClick={ingresar}>Crear Socio</button>
+                       
                         
                     :
                     <AltaSocio/>
