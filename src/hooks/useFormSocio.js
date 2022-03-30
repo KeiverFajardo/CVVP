@@ -2,7 +2,7 @@ import { useState } from "react"
 import {Form} from 'react-bootstrap'
 import { helpHttp } from "../helpers/helpHttp";
 
-export const useForm = (initialForm, validateForm) => {
+export const useFormSocio = (initialForm, validateForm) => {
     const [form, setForm] = useState(initialForm);
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);

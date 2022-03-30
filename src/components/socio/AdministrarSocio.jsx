@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+/* import React, { useState } from 'react'
 import AltaSocio from './AltaSocio';
 
 const AdministrarSocio = () => {
   const [mostrarAltaSocio, setMostrarAltaSocio] = useState(false)
   
 
- /*  const ingresar = () => {
+   const ingresar = () => {
     setMostrarAltaSocio= !mostrarAltaSocio;
     console.log("cambio");
-  } */
+  } 
 
   
   function ingresar(e) {
@@ -50,6 +50,16 @@ const AdministrarSocio = () => {
     
     
 
+  )
+}
+
+export default AdministrarSocio */
+
+import React from 'react'
+
+const AdministrarSocio = () => {
+  return (
+    <div>AdministrarSocio</div>
   )
 }
 

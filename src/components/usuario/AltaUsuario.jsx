@@ -3,10 +3,13 @@ import { useState } from 'react';
 import AdministrarUsuario from './AdministrarUsuario';
 import '../style.css'
 import { useForm } from '../../hooks/useForm';
+import Loader from '../Loader';
+import Message from '../Messaje';
 
 const initialForm = {
     usuario: '',
-    contraseña: '',
+    clave: '',
+    tipo: '',
     nombre: '',
     apellido: '',
     estado: ''
@@ -24,8 +27,12 @@ const validationsForm = (form) => {
         errors.usuario = "El campo 'Usuario' solo acepta letras y espacios en blanco";
     }
 
-    if(!form.contraseña.trim()){
-        errors.contraseña = "El campo 'Contraseña' es requerido";
+    if(!form.clave.trim()){
+        errors.clave = "El campo 'clave' es requerido";
+    }
+
+    if(!form.tipo.trim()){
+        errors.tipo = "El campo 'tipo' es requerido";
     }
 
     if(!form.nombre.trim()){
@@ -40,10 +47,8 @@ const validationsForm = (form) => {
         errors.apellido = "El campo 'Apellido' solo acepta letras y espacios en blanco";
     }
 
-    if(!form.nombre.trim()){
+    if(!form.estado.trim()){
         errors.estado = "El campo 'Estado' es requerido";
-    }else if (!regexName.test(form.estado.trim())){
-        errors.estado = "El campo 'Estado' solo acepta letras y espacios en blanco";
     }
     
     return errors;
@@ -55,7 +60,8 @@ let styles = {
 }
 
 const AltaUsuario = () => {
-    const {form,
+    const {
+        form,
         errors,
         loading,
         response,
@@ -63,95 +69,6 @@ const AltaUsuario = () => {
         handleChange,
         handleSubmit,
     } = useForm(initialForm, validationsForm);
-
-
-
-    const [formData, setFormData] = useState({
-      usuario: '',
-      contraseña: '',
-      nombre: '',
-      apellido: '',
-      estado: ''
-  })
-  
-  const handleOnSubmit = (e) =>{
-    e.preventDefault()
-    let  orden = {}
-
-    console.log("Si llega a enviar")
-
-    /* orden.date = firebase.firestore.Timestamp.fromDate(new Date());
-
-    orden.buyer = formData
-
-    orden.total = precioTotal();
-  
-    orden.items = carList.map(cartItem => {
-        const id = cartItem.item.id;
-        const title = cartItem.item.nombre;
-        const price = cartItem.item.precio * cartItem.cant;
-
-        return {id, title, price}
-    })
-
-    const db = getFirestore();
-    const ordersCol = db.collection('orders');
-
-
-    ordersCol.add(orden)
-    .then((IdDocumento) => {
-        console.log(IdDocumento.id);
-        setNOrden(IdDocumento.id);
-        setVenta(true)
-    })
-    .catch( err => {
-        console.log(err);
-    })
-    .finally(() => {
-        setFormData({
-            name: '',
-            tel: '',
-            email: '',
-            email2: ''
-
-        })
-  
-        console.log('termino la promesa')
-    })
-
-  //actualiza todos los items que estan en el listado del cart del cartcontext
-    const itemsToUpdate = db.collection('items').where(
-        firebase.firestore.FieldPath.documentId(), 'in', carList.map(i => i.item.id)
-    )
-
-    const batch = db.batch();
-
-    itemsToUpdate.get()
-    .then( collection=> {
-        collection.docs.forEach(docSnapshot => {
-            batch.update(docSnapshot.ref, {
-                stock: docSnapshot.data().stock - carList.find(item => item.item.id === docSnapshot.id).cant
-            })
-        })
-
-        batch.commit().then(res => {
-            console.log('resultado batch', res)
-        })
-    })
-    console.log(orden) */
-    
-}
-
-
-function handleOnChange(e) {
-    
-    setFormData({
-        ...formData,
-        [e.target.name]: e.target.value
-    })
-    
-
-}
 
   return (
     <>
@@ -184,16 +101,30 @@ function handleOnChange(e) {
                                             <div className="centrar col col-6">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2 "
                                                   type="password"
-                                                  placeholder='Ingrese contraseña'
-                                                  name='contraseña' 
-                                                  //value={formData.contraseña}
+                                                  placeholder='Ingrese clave'
+                                                  name='clave' 
+                                                  //value={formData.clave}
                                                   required
-                                                  value={form.contraseña}
+                                                  value={form.clave}
                                                   onChange={handleChange}
                                                   onBlur={handleBlur}
                                               />
                                             </div>
-                                            {errors.contraseña && <p style={styles}>{errors.contraseña}</p>}
+                                            {errors.clave && <p style={styles}>{errors.clave}</p>}
+                                            <br />
+                                            <div className="centrar col col-6">
+                                              <input className="btn btn-outline-info w-50 mt-2 mr-2 "
+                                                  type="number"
+                                                  placeholder='Ingrese tipo'
+                                                  name='tipo' 
+                                                  //value={formData.clave}
+                                                  required
+                                                  value={form.tipo}
+                                                  onChange={handleChange}
+                                                  onBlur={handleBlur}
+                                              />
+                                            </div>
+                                            {errors.tipo && <p style={styles}>{errors.tipo}</p>}
                                             <br />
                                             <div className="centrar col col-6">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
@@ -226,7 +157,7 @@ function handleOnChange(e) {
                                             <br />
                                             <div className="centrar col col-6">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
-                                                  type="text"
+                                                  type="number"
                                                   placeholder='Ingrese el estado'
                                                   name='estado' 
                                                  // value={formData.estado}
@@ -253,7 +184,10 @@ function handleOnChange(e) {
                                             
                                         </div>
         </form>
-
+        {loading && <Loader/>}
+        {response && (
+            <Message msg="Los datos han sido enviados" bgColor="#198754" />
+        )}                                     
     </>
     
   )

@@ -7,7 +7,12 @@
   pointer-events: none;
 }
 
-
+.icono {
+  width: 60px;
+  height: 60px;
+  margin: 15px;
+  box-shadow: slategrey;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

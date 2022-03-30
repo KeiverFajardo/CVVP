@@ -12,8 +12,9 @@ import './style.css'
 const BarraNav = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light fondo">
+      <a className="navbar-brand" href="/"><img className="icono" 
+                        src="http://cvvp.org/wp/wp-content/uploads/2016/09/CVVP-logo-blanco-transparente-1.png" alt="" /></a>
         <div className="container-fluid">
-            <a className="navbar-brand" href="/">CVVP</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
@@ -26,7 +27,7 @@ const BarraNav = () => {
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
                     <li class="nav-item dropdown">
                     <li className="nav-item">
-                        <a className="nav-link" href="/AdministrarSocio">Socios</a>
+                        <a className="nav-link" href="/AltaSocio">Socios</a>
                         </li>
                         <hr />
                         <hr />
@@ -193,6 +194,7 @@ const BarraNav = () => {
             </ul>
             </div>
         </div>
+        
     </nav>
   )
 }
