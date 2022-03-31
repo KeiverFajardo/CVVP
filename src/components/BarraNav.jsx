@@ -16,7 +16,7 @@ const BarraNav = () => {
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="/"><img className="icono" 
+  <Navbar.Brand as={Link} to="/"><img className="icono" 
                         src="http://cvvp.org/wp/wp-content/uploads/2016/09/CVVP-logo-blanco-transparente-1.png" alt="" /></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
@@ -24,7 +24,7 @@ const BarraNav = () => {
       
       <NavDropdown title="Mantenimiento de archivos" id="collasible-nav-dropdown">
         
-        <NavDropdown.Item href="/AltaSocio">Socios</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/AltaSocio">Socios</NavDropdown.Item>
         <NavDropdown.Item href="/Familiares">Familares</NavDropdown.Item>
         
         <NavDropdown.Divider />
@@ -125,7 +125,7 @@ const BarraNav = () => {
             
             <NavDropdown.Header><b>Usuario:</b></NavDropdown.Header>
             <NavDropdown.Item href="/Perfil">Mi perfil</NavDropdown.Item>
-            <NavDropdown.Item href="/AltaUsuario">Administración de usuarios</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/AltaUsuario">Administración de usuarios</NavDropdown.Item>
 
             <NavDropdown.Divider />
 
