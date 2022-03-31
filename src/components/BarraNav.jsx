@@ -2,6 +2,7 @@ import React from 'react'
 /* import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'; */
+import {Navbar,Nav,Container,NavDropdown} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, NavLink } from "react-router-dom";
 
@@ -11,7 +12,134 @@ import './style.css'
 
 const BarraNav = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light fondo">
+
+    <>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Container>
+  <Navbar.Brand href="#home"><img className="icono" 
+                        src="http://cvvp.org/wp/wp-content/uploads/2016/09/CVVP-logo-blanco-transparente-1.png" alt="" /></Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="me-auto">
+      
+      <NavDropdown title="Mantenimiento de archivos" id="collasible-nav-dropdown">
+        
+        <NavDropdown.Item href="/AltaSocio">Socios</NavDropdown.Item>
+        <NavDropdown.Item href="/Familiares">Familares</NavDropdown.Item>
+        
+        <NavDropdown.Divider />
+        
+        <NavDropdown.Header><b>Tablas auxiliares</b></NavDropdown.Header>
+            <NavDropdown.Item href="/Categorias">Categorías</NavDropdown.Item>
+            <NavDropdown.Item href="/PeriodosDeCobranza">Periodos de cobranzas</NavDropdown.Item>
+            <NavDropdown.Item href="/Radios">Radios</NavDropdown.Item>
+            <NavDropdown.Item href="/Servicios">Servicios</NavDropdown.Item>
+            <NavDropdown.Item href="/ParametrosDeEdadDeServicios">Parametros de edad de servicios</NavDropdown.Item>
+            <NavDropdown.Item href="/GrupoDeAfinidadDeServicios">Grupos de afinidad de servicios</NavDropdown.Item>
+            <NavDropdown.Item href="/Comentarios">Comentarios</NavDropdown.Item>
+            
+      </NavDropdown>
+
+      <NavDropdown title="Procesos" id="collasible-nav-dropdown2">
+        
+            <NavDropdown.Item href="/GeneracionDeValoresFijos">Generación de valores fijos</NavDropdown.Item>
+            <NavDropdown.Item href="/GeneracionMensualDeValores">Generación mensual de valores</NavDropdown.Item>
+
+            <NavDropdown.Divider />
+
+            <NavDropdown.Item href="/IngresoDePagos">Ingreso de pagos</NavDropdown.Item>
+            <NavDropdown.Item href="/AnulacionDePagos">Anulación de pagos</NavDropdown.Item>
+            <NavDropdown.Item href="/IngresoDeReciboMensual">Ingreso de recibo mensual</NavDropdown.Item>
+
+            <NavDropdown.Divider />
+
+            <NavDropdown.Item href="/ListadoDePlantillaDeCobro">Listado de plantilla de cobro</NavDropdown.Item>
+
+            <NavDropdown.Divider />
+
+            <NavDropdown.Item href="/AnulacionDeGeneracionDeValoresFijos">Anulación de generación de valores</NavDropdown.Item>
+            
+      </NavDropdown>
+
+      <NavDropdown title="Emisión de documentos" id="collasible-nav-dropdown3">
+        
+        
+        <NavDropdown.Item href="/EmisionDeRecibos">Emisión de recibos</NavDropdown.Item>
+
+        <NavDropdown.Divider />
+
+        <NavDropdown.Item href="/ListadoResumidoDeEmision">Listado resumido de emisión</NavDropdown.Item>
+        <NavDropdown.Item href="/ListadoCuadroDeEmision">Listado cuadro de emisión</NavDropdown.Item>
+        
+        
+  </NavDropdown>
+  <NavDropdown title="Deudores" id="collasible-nav-dropdown4">
+        
+        
+        <NavDropdown.Item href="/CuentaCorrienteDeSocios">Cuenta corriente de socios</NavDropdown.Item>
+        <NavDropdown.Item href="/InventarioDeRadios">Inventario de radios</NavDropdown.Item>
+
+        <NavDropdown.Divider />
+
+        <NavDropdown.Item href="/DeudaDeSocios">Deuda de socios</NavDropdown.Item>
+        <NavDropdown.Item href="/DetalleDeDeudaDeServicios">Detalle de deuda de servicios</NavDropdown.Item>
+        
+        
+  </NavDropdown>
+  <NavDropdown title="Adm de radios" id="collasible-nav-dropdown5">
+        
+        
+        <NavDropdown.Item href="/CuentaCorrienteDeRadios">Cuenta corriente de radios</NavDropdown.Item>
+        <NavDropdown.Item href="/DetalleDeCobranza">Detalle de cobranza</NavDropdown.Item>
+
+        <NavDropdown.Divider />
+
+        <NavDropdown.Item href="/Transferencias_y_Anulaciones">Transferencias y anualaciones</NavDropdown.Item>
+        <NavDropdown.Item href="/DiarioDeTransferencias">Diario de transferencias</NavDropdown.Item>
+        
+        
+        </NavDropdown>
+        <NavDropdown title="Listados" id="collasible-nav-dropdown6">
+        
+        
+        <NavDropdown.Item href="/ListadoDeSocios">Listados de socios</NavDropdown.Item>
+        <NavDropdown.Item href="/ListaDeFamiliares">Listadosde familiares</NavDropdown.Item>
+
+        <NavDropdown.Divider />
+
+        <NavDropdown.Item href="/ListadoDeSociosDadosDeBaja">Listados de socios dado de baja</NavDropdown.Item>
+
+        <NavDropdown.Divider />
+
+        <NavDropdown.Item href="/ListadoDeAfiliadosAServicios">Listado de afiliados a servicios</NavDropdown.Item>
+
+        <NavDropdown.Divider />
+
+        <NavDropdown.Item href="/ListadoDeAltaYBajaDeServicios">Listado de Alta a baja de servicios</NavDropdown.Item>
+        
+        
+      </NavDropdown>
+    </Nav>
+    <Nav>
+        <NavDropdown title="Configuración" id="collasible-nav-dropdown4">
+            
+            <NavDropdown.Header><b>Usuario:</b></NavDropdown.Header>
+            <NavDropdown.Item href="/Perfil">Mi perfil</NavDropdown.Item>
+            <NavDropdown.Item href="/AltaUsuario">Administración de usuarios</NavDropdown.Item>
+
+            <NavDropdown.Divider />
+
+            <NavDropdown.Item href="/logout">Cerrar sesión</NavDropdown.Item>
+            
+            
+            
+      </NavDropdown>
+    </Nav>
+  </Navbar.Collapse>
+  </Container>
+</Navbar>
+    </>
+   /* <nav className="navbar navbar-expand-lg navbar-light fondo">
       <a className="navbar-brand" href="/"><img className="icono" 
                         src="http://cvvp.org/wp/wp-content/uploads/2016/09/CVVP-logo-blanco-transparente-1.png" alt="" /></a>
         <div className="container-fluid">
@@ -195,7 +323,7 @@ const BarraNav = () => {
             </div>
         </div>
         
-    </nav>
+    </nav>*/
   )
 }
 
