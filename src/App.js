@@ -10,6 +10,7 @@ import Configuracion from './components/configuracion/Configuracion';
 import AltaSocio from './components/socio/AltaSocio';
 import AdministrarSocio from './components/socio/AdministrarSocio';
 import AdministrarUsuario from './components/usuario/AdministrarUsuario';
+import Inicio from './components/inicio/Inicio';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/altaSocio' element={ <AltaSocio/> } />
                 <Route path='/administrarSocio' element={ <AdministrarSocio/> } />
                 <Route path='/administrarUsuario' element={ <AdministrarUsuario/> } />
+                <Route path='/' element={ <Inicio/> } />
 
             </Routes>
    

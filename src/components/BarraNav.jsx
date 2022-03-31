@@ -16,7 +16,7 @@ const BarraNav = () => {
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="#home"><img className="icono" 
+  <Navbar.Brand href="/"><img className="icono" 
                         src="http://cvvp.org/wp/wp-content/uploads/2016/09/CVVP-logo-blanco-transparente-1.png" alt="" /></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
