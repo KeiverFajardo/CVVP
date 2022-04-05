@@ -1,37 +1,69 @@
 var express = require('express');
-var bodyParser = require('body-parser');
-
 var app = express();
-const mysql = require("mysql");
-require("dotenv").config();
 
-var port = process.env.PORT || 3000;
+//var bodyParser = require('body-parser');
+
+
+//var port = process.env.PORT || 3000;
+
+
+
+// Settings
+app.set('port', process.env.PORT || 3000);
+
+// Middlewares
+app.use(express.json());
+
+
+// Routes
+app.use(require('./routes/usuario'));
+
+//Starting server
+app.listen(app.get('port'), () => {
+    console.log(`Server on port ${app.get('port')}`);
+	//console.log('Defined routes:');
+	//console.log('[GET] http://localhost:3525/');
+});
+
+
+
+
+
+const { insertUsuario, listarUsuarios} = require('./controllers/usuario');
+
+
+
 
 // Convierte una petición recibida (POST-GET...) a objeto JSON
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-const conecction = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-});
-
-conecction.connect((err) => {
-    if(err) throw err;
-    console.log("Connected to database");
-})
-
 
 app.get('/', function(req, res){
-	res.status(200).send({
+	/* res.status(200).send({
 		message: 'GET Home route working fine!'
-	});
+	}); */
+    res.send("helloo mundo");
 });
 
-app.listen(port, function(){
-	console.log(`Server running in http://localhost:${port}`);
-	console.log('Defined routes:');
-	console.log('	[GET] http://localhost:3525/');
+app.get('/insertUsuario', function(req, res){
+	/* res.status(200).send({
+		message: 'GET Home route working fine!'
+	}); */
+    insertUsuario(connection, (result) =>{
+        res.json(result);
+    });
+
+    //res.send("helloo mundo");
+});
+
+app.get('/listarUsuarios', function(req, res){
+	/* res.status(200).send({
+		message: 'GET Home route working fine!'
+	}); */
+    insertUsuario(connection, (result) =>{
+        res.json(result);
+    });
+
+    //res.send("helloo mundo");
 });

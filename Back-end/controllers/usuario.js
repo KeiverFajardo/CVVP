@@ -1,7 +1,32 @@
-const { response, request } = require('express');
-const bcryptjs = require('bcryptjs');
+//const { response, request } = require('express');
+
+const mysql = require('mysql');
 
 
+
+function insertUsuario(connection, data, callback){
+    let consulta = "INSERT INTO usuarios (USUARIO, CLAVE, TIPO, NAME_CLIENT, SURNAME_CLIENTE, ESTADO) VALUES (?, ?, ?, ?, ?)";
+    let query = mysql.format(consulta, [data.usuario, data.clave, data.tipo, data.name_client, data.surname_cliente, data.estado]);
+    connection.query(consulta, function(err, result){
+        if(err) throw err;
+        callback(result);
+    });
+    connection.end();
+}
+
+
+function listarUsuarios(connection, callback){
+    connection.query('SELECT * FROM usuarios', function(err, result){
+        if(err) throw err;
+        callback(result);
+    });
+    connection.end();
+}
+
+
+
+
+/* 
 const Usuario = require('../models/usuario');
 
 
@@ -22,7 +47,7 @@ const usuariosGet = async(req = request, res = response) => {
         total,
         usuarios
     });
-}
+} */
 /* 
 
 const usuariosPost = async(req, res = response) => {
@@ -78,9 +103,11 @@ const usuariosDelete = async(req, res = response) => {
 } */
 
 module.exports = {
-    usuariosGet,
+    insertUsuario,
+    listarUsuarios,
+    /* usuariosGet,
     usuariosPost,
     usuariosPut,
     usuariosPatch,
-    usuariosDelete,
+    usuariosDelete, */
 }
