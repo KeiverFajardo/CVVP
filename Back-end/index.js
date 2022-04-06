@@ -1,15 +1,16 @@
 var express = require('express');
 var app = express();
 
+//const router = express.Router();
 //var bodyParser = require('body-parser');
 
 
-//var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
-
+//const mysqlConnection  = require('./database/database.js');
 
 // Settings
-app.set('port', process.env.PORT || 3000);
+//app.set('port', process.env.PORT || 3000);
 
 // Middlewares
 app.use(express.json());
@@ -19,8 +20,8 @@ app.use(express.json());
 app.use(require('./routes/usuario'));
 
 //Starting server
-app.listen(app.get('port'), () => {
-    console.log(`Server on port ${app.get('port')}`);
+app.listen(port, () => {
+    console.log(`Server on port ${port}`);
 	//console.log('Defined routes:');
 	//console.log('[GET] http://localhost:3525/');
 });
@@ -29,41 +30,41 @@ app.listen(app.get('port'), () => {
 
 
 
-const { insertUsuario, listarUsuarios} = require('./controllers/usuario');
+//const { insertUsuario, listarUsuarios} = require('./controllers/usuario');
 
 
 
 
 // Convierte una petición recibida (POST-GET...) a objeto JSON
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
+/* app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json()); */
 
 
-app.get('/', function(req, res){
+//router.get('/', function(req, res){
 	/* res.status(200).send({
 		message: 'GET Home route working fine!'
 	}); */
-    res.send("helloo mundo");
-});
+ //   res.send("helloo mundo");
+//});
 
-app.get('/insertUsuario', function(req, res){
+//app.get('/insertUsuario', function(req, res){
 	/* res.status(200).send({
 		message: 'GET Home route working fine!'
 	}); */
-    insertUsuario(connection, (result) =>{
-        res.json(result);
-    });
+ //   insertUsuario(mysqlConnection, (result) =>{
+ //       res.json(result);
+ //   });
 
     //res.send("helloo mundo");
-});
+//});
 
-app.get('/listarUsuarios', function(req, res){
+//router.get('/listarUsuarios', function(req, res){
 	/* res.status(200).send({
 		message: 'GET Home route working fine!'
 	}); */
-    insertUsuario(connection, (result) =>{
-        res.json(result);
-    });
+   // listarUsuarios(mysqlConnection, (result) =>{
+   //     res.json(result);
+   // });
 
     //res.send("helloo mundo");
-});
+//});

@@ -23,6 +23,17 @@ function listarUsuarios(connection, callback){
     connection.end();
 }
 
+//me retorna vacio, revisar
+function usuarioGet(connection, callback, headers){
+    var param = headers.usuario
+    let consulta = "SELECT * FROM usuarios where usuario = ?";
+    let query = mysql.format(consulta, [param]);
+    connection.query(query, function(err, result){
+        if(err) throw err;
+        callback(result);
+    });
+    connection.end();
+}
 
 
 
@@ -105,8 +116,8 @@ const usuariosDelete = async(req, res = response) => {
 module.exports = {
     insertUsuario,
     listarUsuarios,
-    /* usuariosGet,
-    usuariosPost,
+    usuarioGet,
+    /*usuariosPost,
     usuariosPut,
     usuariosPatch,
     usuariosDelete, */
