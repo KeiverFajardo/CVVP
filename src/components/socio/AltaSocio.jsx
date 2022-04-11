@@ -139,15 +139,15 @@ const AltaSocio = () => {
         <p className="datos">Ingrese los datos para ingresar un socio</p>
 
         <hr />
-        <form className="card col col-12 formulario centrar"
+        <form className="formulario centrar padre"
                                         onSubmit={handleSubmit}
                                         //onSubmit={handleOnSubmit}
                                         //onChange={handleOnChange}
                                     >
-                                        <div className="col col-8 centrar wrap">
+                                        
 
                                             
-                                            <div className="centrar col col-6 wrap">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2 "
                                                   type="text"
                                                   placeholder='Ingrese el numero de socio'
@@ -160,7 +160,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.numero_socio && <p style={styles}>{errors.numero_socio}</p>}
                                             <br />
-                                            <div className="centrar col col-6 wrap">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2 "
                                                   type="text"
                                                   placeholder='Ingrese nombre completo'
@@ -173,7 +173,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.nombre_completo && <p style={styles}>{errors.nombre_completo}</p>}
                                             <br />
-                                            <div className="centrar col col-6 wrap">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2 "
                                                   type="text"
                                                   placeholder='Ingrese ci'
@@ -186,7 +186,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.ci && <p style={styles}>{errors.ci}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2 "
                                                   type="text"
                                                   placeholder='Ingrese nacimiento'
@@ -199,7 +199,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.estado && <p style={styles}>{errors.estado}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese el ruc'
@@ -212,7 +212,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.ruc && <p style={styles}>{errors.ruc}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese el direccion'
@@ -225,7 +225,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.direccion && <p style={styles}>{errors.direccion}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese el direccion de cobro'
@@ -238,7 +238,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.direccion_cobro && <p style={styles}>{errors.direccion_cobro}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese radio'
@@ -251,7 +251,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.radio && <p style={styles}>{errors.radio}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese ruta'
@@ -264,7 +264,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.ruta && <p style={styles}>{errors.ruta}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese categoria'
@@ -277,7 +277,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.categoria && <p style={styles}>{errors.categoria}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese fecha de alta'
@@ -290,7 +290,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.fecha_de_alta && <p style={styles}>{errors.fecha_de_alta}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese fecha de baja'
@@ -303,7 +303,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.fecha_de_baja && <p style={styles}>{errors.fecha_de_baja}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese activo'
@@ -316,7 +316,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.activo && <p style={styles}>{errors.activo}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese periodo de cobranza'
@@ -329,7 +329,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.periodo_cobranza && <p style={styles}>{errors.periodo_cobranza}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese telefono'
@@ -342,7 +342,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.telefono && <p style={styles}>{errors.telefono}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese fax'
@@ -355,7 +355,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.fax && <p style={styles}>{errors.fax}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese el celular'
@@ -368,7 +368,7 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.celular && <p style={styles}>{errors.celular}</p>}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese el email'
@@ -381,17 +381,17 @@ const AltaSocio = () => {
                                             </div>
                                             {errors.email && <p style={styles}>{errors.email}</p>}
                                           <br />
-                                          <div className="centrar col col-6">
+                                          {/* <div className="centrar form-group col-md-12">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
-                                                  placeholder='Ingrese el comentarios'
+                                                  placeholder='Ingrese el comentario'
                                                   name='comentarios' 
                                                   value={form.comentarios}
                                                   required
                                                   onChange={handleChange}
                                                   onBlur={handleBlur}
                                               />
-                                            </div>
+                                            </div> */}
                                             {errors.comentarios && <p style={styles}>{errors.comentarios}</p>}
                                             
                                             {/* (form.required) ?  */
@@ -404,10 +404,9 @@ const AltaSocio = () => {
                                             }
                                            
                                             
-                                      
-                                            
-                                        </div>
+                                           <div className="centrar form-group col-md-5">
                                         <input type="submit" value="Enviar" className="btn btn-outline-success w-50 mt-2"/>
+                                        </div>
                                         <hr />
                                             <br />
         </form>

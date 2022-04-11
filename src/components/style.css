@@ -7,5 +7,15 @@
     justify-items: center;
     justify-content: center;
     text-align: center;
-    display:inline-block;
+}
+
+.padre{
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+}
+
+.ff{
+  float: left
 }

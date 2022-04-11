@@ -75,16 +75,14 @@ const AltaUsuario = () => {
         <h2>ALTA DE USUARIOS</h2>  
         <p className="datos">Ingrese los datos para ingresar un usuario</p>
         <hr />
-        <form className="card col-12 formulario centrar"
+        <form className="formulario centrar padre"
                 onSubmit={handleSubmit}                        
             //onSubmit={handleOnSubmit}
            // onChange={handleOnChange}
                                     >
-                                        <div className="col col-6 centrar">
-
                                           
 
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2 "
                                                   type="text"
                                                   placeholder='Ingrese el usuario'
@@ -95,10 +93,10 @@ const AltaUsuario = () => {
                                                   onChange={handleChange}
                                                   onBlur={handleBlur}
                                               />
-                                              {errors.usuario && <p style={styles}>{errors.usuario}</p>}
+                                              {/* {errors.usuario && <p style={styles}>{errors.usuario}</p>} */}
                                             </div>
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2 "
                                                   type="password"
                                                   placeholder='Ingrese clave'
@@ -110,9 +108,9 @@ const AltaUsuario = () => {
                                                   onBlur={handleBlur}
                                               />
                                             </div>
-                                            {errors.clave && <p style={styles}>{errors.clave}</p>}
+                                           {/*  {errors.clave && <p style={styles}>{errors.clave}</p>} */}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2 "
                                                   type="number"
                                                   placeholder='Ingrese tipo'
@@ -124,9 +122,9 @@ const AltaUsuario = () => {
                                                   onBlur={handleBlur}
                                               />
                                             </div>
-                                            {errors.tipo && <p style={styles}>{errors.tipo}</p>}
+                                            {/* {errors.tipo && <p style={styles}>{errors.tipo}</p>} */}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese el nombre'
@@ -139,9 +137,9 @@ const AltaUsuario = () => {
                                                   
                                               />
                                             </div>
-                                            {errors.nombre && <p style={styles}>{errors.nombre}</p>}
+                                            {/* {errors.nombre && <p style={styles}>{errors.nombre}</p>} */}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="text"
                                                   placeholder='Ingrese el apellido'
@@ -153,9 +151,9 @@ const AltaUsuario = () => {
                                                   onBlur={handleBlur}
                                               />
                                             </div>
-                                            {errors.apellido && <p style={styles}>{errors.apellido}</p>}
+                                          {/*   {errors.apellido && <p style={styles}>{errors.apellido}</p>} */}
                                             <br />
-                                            <div className="centrar col col-6">
+                                            <div className="centrar form-group col-md-5">
                                               <input className="btn btn-outline-info w-50 mt-2 mr-2"
                                                   type="number"
                                                   placeholder='Ingrese el estado'
@@ -167,10 +165,12 @@ const AltaUsuario = () => {
                                                   onBlur={handleBlur}
                                               />
                                             </div>
-                                            {errors.estado && <p style={styles}>{errors.estado}</p>}
+                                           {/*  {errors.estado && <p style={styles}>{errors.estado}</p>} */}
                                            <br />
                                            <br />
-                                           <input type="submit" value="Enviar" />
+                                           <div className="centrar form-group col-md-5 ">
+                                            <input type="submit" value="Enviar" className='btn btn-outline-info w-40 mt-2 mr-2'/>
+                                           </div>
                                             {/* 
                                             <div class="centrar col col-6">
                                                <button className="btn btn-outline-success w-50 mt-2">Ingresar Usuario</button>
@@ -182,7 +182,6 @@ const AltaUsuario = () => {
                                             
                                       
                                             
-                                        </div>
         </form>
         {loading && <Loader/>}
         {response && (

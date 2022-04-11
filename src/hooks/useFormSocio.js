@@ -19,8 +19,8 @@ export const useFormSocio = (initialForm, validateForm) => {
     };
 
     const handleBlur = (e) => {
-        handleChange(e);
-        setErrors(validateForm(form));
+        /* handleChange(e);
+        setErrors(validateForm(form)); */
     };
 
     const handleSubmit = (e) => {
