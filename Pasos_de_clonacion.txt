@@ -1,0 +1,20 @@
+primero creamos un directorio en tu fileSystem.
+C:\Nombre_del_proyecto(cvvp)
+
+segundo accedemos a la cuenta de github y copiamos la direccion de clonacion del repositorio.
+https://github.com/KeiverFajardo/CVVP.git
+
+Tercero nos posicionamos en la carpeta del file system.
+C:\Nombre_del_proyecto(cvvp)
+
+Una vez alli en la consola de comandos ejecutas el comando 
+git remote https://github.com/KeiverFajardo/CVVP.git
+
+Luego te logueas con tu usuario de github y contraseña.
+Posteriormente abres el proyecto en el vs code.
+
+Descargas las dependencuias actualizadas.
+npm install --save --legacy-peer-deps
+
+luego ejecutamos el proyecto con 
+npm start
