@@ -2,6 +2,9 @@ Nos posicionamos en el disco por ejemplo c:\
 creamos una nueva carpeta por comandos. MD (nombre de la carpeta)
 /*rd nombredeldirectorioaeliminar*/
 
+/*eliminar una rama local: git branch -d nombrerama*/
+/*eliminar una rama del servidor git push origin --delete nombrerama*/
+
 primero creamos un directorio en tu fileSystem.
 C:\Nombre_del_proyecto(cvvp)
 
