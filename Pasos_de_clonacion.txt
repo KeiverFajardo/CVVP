@@ -1,3 +1,7 @@
+Nos posicionamos en el disco por ejemplo c:\
+creamos una nueva carpeta por comandos. MD (nombre de la carpeta)
+/*rd nombredeldirectorioaeliminar*/
+
 primero creamos un directorio en tu fileSystem.
 C:\Nombre_del_proyecto(cvvp)
 
